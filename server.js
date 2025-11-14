@@ -6,7 +6,6 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// ===== TEST =====
 app.get("/", (req, res) => {
   res.json({
     status: "online",
@@ -15,7 +14,6 @@ app.get("/", (req, res) => {
   });
 });
 
-// ===== ENDPOINT QUE EL ESP32 LLAMA =====
 app.post("/api/reading", (req, res) => {
   console.log("📥 Datos recibidos:", req.body);
 
@@ -26,7 +24,6 @@ app.post("/api/reading", (req, res) => {
   });
 });
 
-// ===== PORT =====
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`🚀 Ilex Bridge escuchando en puerto ${PORT}`);
